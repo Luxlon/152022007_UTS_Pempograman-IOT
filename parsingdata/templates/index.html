@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>MQTT Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in mqtt_data %}
+                <tr>
+                    <td>{{ data['temperature'] }}</td>
+                    <td>{{ data['humidity'] }}</td>
+                    <!-- Tambahkan kolom sesuai data yang diterima -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
